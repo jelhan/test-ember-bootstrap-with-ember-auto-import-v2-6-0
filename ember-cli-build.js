@@ -4,6 +4,17 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
+    autoImport: {
+      earlyBootSet: () => [
+        '@glimmer/tracking',
+        '@glimmer/component',
+        '@ember/service',
+        '@ember/controller',
+        '@ember/routing/route',
+        '@ember/component',
+        '@ember/-internals/metal',
+      ],
+    },
     'ember-bootstrap': {
       bootstrapVersion: 5,
       importBootstrapCSS: true,
